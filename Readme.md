@@ -1,90 +1,58 @@
-# SERVER JS CODE
+# ♟️ Chess Game (Node.js + Express + EJS + Tailwind CSS via CDN + Chess.js)
 
-- Import: express, http, socket.io, chess.js
+A web-based **Chess Game** built using **Node.js**, **Express**, **EJS**, **HTML/CSS**, **Tailwind CSS via CDN**, and **Chess.js** for game logic.  
+This project lets you play a complete chess game with legal moves and a dynamic board, styled using Tailwind’s utility classes.
 
-- Create Express app instance
-- Initialize HTTP server with Express
-- Instantiate Socket.io on HTTP server
+---
 
-- Create Chess object instance (chess.js)
+## 🧠 Overview
 
-- Initialize:
-    - Players object: track socket IDs, roles (white/black)
-    - CurrentPlayer: track current turn
+This Chess Game supports:
 
-- Configure Express app:
-    - Use EJS templating engine
-    - Serve static files from 'public' directory
+- Full **standard chess rules** (legal movements, captures, check & checkmate)  
+- Dynamic board rendering using **EJS templates**  
+- Backend routing with **Express.js**  
+- Chess logic powered by **Chess.js**  
+- Modern UI styled with **Tailwind CSS (via CDN)**
 
-- Define route for root URL
-- Render EJS template "index"
-- Title: "Custom Chess Game"
+---
 
-- Socket.io handles connection event
-- Callback executed on client connect
-- Server assigns role based on availability:
-    - If slots empty:
-        - Assign role (white/black)
-        - Inform player
-    - If slots full:
-        - Designate as spectator
+## 🚀 Features
 
-- Client connection:
-    - Assign role based on game state:
-        - If no white player, assign white role
-        - If no black player, assign black role
-        - Emit "playerRole" event with assigned role
-        - If both slots filled, designate as spectator
-        - Emit "spectatorRole" event
-    - Send initial board state using FEN notation
+✔️ Legal chess move validation  
+✔️ Two-player gameplay in the browser  
+✔️ Responsive UI styled with Tailwind utility classes  
+✔️ Express server & EJS views  
+✔️ Clean, organised folder structure
 
-- Client disconnection:
-    - Remove assigned role from players object
+## 🛠️ Technologies Used
 
-- Listen for "move" events:
-    - Validate correct player's turn
-    - If valid:
-        - Update game state
-        - Broadcast move via "move" event
-        - Send updated board state via "boardState" event
-    - If invalid:
-        - Log error message
+- **Node.js** – Backend runtime  
+- **Express.js** – Web framework  
+- **EJS** – Template engine  
+- **Chess.js** – Chess rules & logic  
+- **Tailwind CSS** – UI styling (via CDN)  
+- **HTML & CSS** – Frontend markup & styles
 
-- Ensure smooth gameplay and real-time updates for all connected clients.
+---
 
-# FRONTEND SETUP
+## 🚀 Future Enhancements
 
-- Socket.io Initialization:
-       - Establish WebSocket connection to the server using Socket.io (const socket = io();).
+Here are some ideas for improvements and additions that will be implemented soon:
 
-- Chess Game Initialization:
-       - Create an instance of the Chess class from the chess.js library to manage the game logic (const chess = new Chess();).
+- 🧠 **AI Opponent** – Integrate a chess engine (e.g., Stockfish or minimax) so players can play vs computer
+- 📊 **Game History / Replay** – Allow users to save and replay finished games
+- 📱 **Mobile Friendly Layout** – Improve responsiveness for mobile devices
+- 🧩 **Move Hints / Highlighting** – Show legal moves and suggestions as hints
+- 🌐 **Online Deployment** – Deploy on a hosting platform (Heroku, Vercel, Render etc.)
+- 🏆 **Leaderboards & Profiles** – Add user logins, rating systems, and leaderboards
 
-- DOM Elements:
-       - Select the HTML element with the ID "chessboard" to render the chessboard (const boardElement = document.querySelector("#chessboard");).
+**Stay Updated!**
 
-- Drag and Drop:
-       - Implement drag and drop functionality for moving chess pieces on the board.
-       - Pieces are draggable only if it's the player's turn.
-       - Event listeners for drag start, drag end, drag over, and drop events are attached to handle drag and drop interactions.
+![chess 1](https://github.com/user-attachments/assets/66714a35-2f47-434a-856f-1015e38d884a)
 
-- Rendering the Board:
-       - Generate the HTML representation of the chessboard based on the current game state.
-       - Iterate over the board array and create square elements for each cell.
-       - Create piece elements for occupied squares and append them to square elements.
-       - Flip the board for the black player's view.
 
-- Handling Moves:
-       - Handle player moves when dragging and dropping pieces.
-       - Construct a move object containing the source and target squares in algebraic notation.
-       - Emit a "move" event to the server via Socket.io.
+![chess 2](https://github.com/user-attachments/assets/8bd37d55-0352-4d9d-9e09-078502e93f54)
 
-- Unicode Chess Pieces:
-       - Return Unicode characters representing chess pieces based on their type.
 
-- Socket.io Event Handlers:
-       - Listen for various events from the server such as player role assignment, spectator role assignment, board state updates, and opponent moves.
-       - Update the local game state and render the board accordingly when receiving events.
 
-- Initial Rendering:
-       - Call the renderBoard function initially to render the initial state of the chessboard.
