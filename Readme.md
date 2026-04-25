@@ -8,16 +8,6 @@
 ![Express](https://img.shields.io/badge/Express.js-Framework-000000?style=for-the-badge&logo=express&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Styling-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
----
-
-<p align="center">
-  <a href="#-overview">🧠 Overview</a> •
-  <a href="#-features">🚀 Features</a> •
-  <a href="#-technologies-used">🛠️ Tech Stack</a> •
-  <a href="#-future-enhancements">📈 Future Plans</a> •
-  <a href="#-screenshots">📸 Screenshots</a>
-</p>
-
 </div>
 
 ---
@@ -70,7 +60,5 @@ Elevate your chess experience with this high-performance web application. Design
 **Developed with ❤️ by Anurag Thakur**
 
 </div>
-
-**Stay Updated!**
 
 
